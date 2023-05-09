@@ -8,10 +8,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _health;
     [SerializeField] private int _reward;
 
-    [SerializeField] private Player _target;
+    private Player _target;
 
-    public event UnityAction Dead;
+    public event UnityAction<Enemy> Dead;
     public Player Target => _target;
+    public int Reward => _reward;
+
+    public void Init(Player target)
+    {
+        _target = target;
+    }
 
     public void TakeDamage(int damage)
     {
@@ -19,6 +25,7 @@ public class Enemy : MonoBehaviour
 
         if(_health <= 0)
         {
+            Dead?.Invoke(this);
             Destroy(gameObject);
         }
     }

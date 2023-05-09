@@ -30,6 +30,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void AddMoney(int money)
+    {
+        Money += money;
+    }
+
     public void OnEnemyDead(int reward)
     {
         Money += reward;
