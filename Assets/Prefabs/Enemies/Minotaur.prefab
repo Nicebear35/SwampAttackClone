@@ -153,8 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 5
-  _reward: 1
-  _target: {fileID: 0}
+  _reward: 15
 --- !u!114 &8691738702937655907
 MonoBehaviour:
   m_ObjectHideFlags: 0
